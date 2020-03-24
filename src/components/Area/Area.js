@@ -5,7 +5,7 @@ function Area({ area }) {
   return(
     <section className="area-card">
       <h3>{area.name}</h3>
-      <p>Also know as {area.shortname}</p>
+      <p>Also known as {area.shortname}</p>
       <p>{area.description}</p>
       <button>View Listings</button>
     </section>
