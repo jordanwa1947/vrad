@@ -1,5 +1,6 @@
 import React from 'react';
 import Area from '../Area/Area';
+import './Areas.css';
 
 class Areas extends React.Component {
   constructor() {
@@ -43,7 +44,7 @@ class Areas extends React.Component {
 
   render() {
     return(
-      <section>
+      <section className="areas-container">
         {this.buildAreaComponents()}
       </section>
     )
