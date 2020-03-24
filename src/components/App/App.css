@@ -1,1 +1,19 @@
+* {
+  font-family: 'Bitter', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #1E2023;
+  background-color: #FAF1ED;
+}
 
+input {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+button {
+  padding: 1em 2em;
+  border-radius: 4px;
+  background-color: #FE5F55;
+  border: none;
+}
