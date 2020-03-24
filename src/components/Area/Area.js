@@ -7,6 +7,7 @@ function Area({ area }) {
       <h3>{area.name}</h3>
       <p>Also know as {area.shortname}</p>
       <p>{area.description}</p>
+      <button>View Listings</button>
     </section>
   )
 }
