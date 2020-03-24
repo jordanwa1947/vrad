@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  min-height: 10vh;
+  padding: .5em 8em;
+}
+
+#headline {
+  font-weight: 400;
+  font-style: italic;
+}
+
+h1 {
+  border-bottom: 2px solid #FE5F55;
+}
+
+nav {
+  position: relative;
+  width: 30%;
+}
+
+nav button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%)
+}
