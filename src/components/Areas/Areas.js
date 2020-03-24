@@ -16,6 +16,7 @@ class Areas extends React.Component {
         .then(response => response.json())
         .then(areaDetails => {
           return {
+            id: areaDetails.id,
             shortname: area.area,
             name: areaDetails.name,
             description: areaDetails.about
