@@ -4,11 +4,10 @@
   padding: 0;
   box-sizing: border-box;
   color: #1E2023;
-  background-color: #FAF1ED;
 }
 
-input {
-  font-family: 'Source Sans Pro', sans-serif;
+body {
+  background-color: #FAF1ED;
 }
 
 button {
@@ -16,4 +15,9 @@ button {
   border-radius: 4px;
   background-color: #FE5F55;
   border: none;
+}
+
+main {
+  display: flex;
+  justify-content: center;
 }
