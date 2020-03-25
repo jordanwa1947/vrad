@@ -7,13 +7,24 @@ import './App.css';
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      username: '',
+      travelReason: ''
+    };
   }
+
+  login = (username, travelReason) => {
+    this.setState({username: username, travelReason: travelReason})
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
-        <Areas />
+        <main>
+          <Login login={this.login}/>
+          <Areas />
+        </main>
       </div>
     )
   }
