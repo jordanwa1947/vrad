@@ -5,8 +5,9 @@ form {
   align-items: center;
   width: 30%;
   padding: 2em;
-  margin-top: 10em;
+  margin-top: 7em;
   border-radius: 4px;
+  border: 1px solid #E1DAD7;
 }
 
 form h3 {
@@ -19,9 +20,9 @@ form button {
   width: 70%;
 }
 
-form label {
-  align-self: baseline;
-  margin-left: 15%;
+select {
+  margin: 1em;
+  font-size: .8em;
 }
 
 input {

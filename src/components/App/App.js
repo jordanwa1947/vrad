@@ -8,12 +8,13 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: ''
+      username: '',
+      travelReason: ''
     };
   }
 
-  login = (username) => {
-    this.setState({username: username})
+  login = (username, travelReason) => {
+    this.setState({username: username, travelReason: travelReason})
   }
 
   render() {
