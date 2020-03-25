@@ -23,6 +23,7 @@ class App extends React.Component {
         <Header />
         <main>
           <Login login={this.login}/>
+          <Areas />
         </main>
       </div>
     )
