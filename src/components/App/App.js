@@ -4,6 +4,8 @@ import Login from '../Login/Login';
 import Areas from '../Areas/Areas';
 import './App.css';
 
+import { Route, NavLink } from 'react-router-dom'
+
 class App extends React.Component {
   constructor() {
     super();
@@ -22,8 +24,8 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <main>
-          <Login login={this.login}/>
-          <Areas />
+          <Route exact path='/areas' component={Areas} />
+          <Route exact path='/' render={() => <Login login={this.login}/>} />
         </main>
       </div>
     )
