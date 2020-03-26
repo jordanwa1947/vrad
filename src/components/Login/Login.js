@@ -16,8 +16,10 @@ class Login extends React.Component {
   }
 
   handleClick = (e) => {
-    e.preventDefault();
-    this.props.login(this.state.name, this.state.travelReason)
+    if (this.state.name && this.state.email && this.state.travelReason) {
+      e.preventDefault();
+      this.props.login(this.state.name, this.state.travelReason)
+    }
   }
 
   render() {
