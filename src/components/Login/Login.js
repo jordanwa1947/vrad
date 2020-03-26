@@ -5,9 +5,9 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: '',
-      password: '',
-      travelReason: 'leisure'
+      name: '',
+      email: '',
+      travelReason: 'leisure',
     }
   }
 
@@ -17,25 +17,25 @@ class Login extends React.Component {
 
   handleClick = (e) => {
     e.preventDefault();
-    this.props.login(this.state.username, this.state.travelReason)
+    this.props.login(this.state.name, this.state.travelReason)
   }
 
   render() {
     return (
       <form>
-        <h3>Please log in</h3>
+        <h3>Welcome!</h3>
         <input
           type='text'
-          placeholder='username'
-          value={this.state.username}
-          name='username'
+          placeholder='name'
+          value={this.state.name}
+          name='name'
           onChange={this.handleChange}
           required/>
         <input
-          type='password'
-          placeholder='password'
-          value={this.state.password}
-          name='password'
+          type='email'
+          placeholder='email'
+          value={this.state.email}
+          name='email'
           onChange={this.handleChange}
           required/>
         <label htmlFor="travelReason">Select a reason for booking</label>
