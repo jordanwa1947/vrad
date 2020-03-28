@@ -5,8 +5,9 @@ import Header from './Header.js';
 
 describe('Header', () => {
   it('It should render the text that we expect', () => {
-    const { getByText } = render(<Header />);
+    const { getByText } = render(<Header name="Jordan" />);
 
     expect(getByText("— vacation rentals around denver.")).toBeInTheDocument();
+    expect(getByText("Welcome, Jordan! vrad.")).toBeInTheDocument();
   })
 })

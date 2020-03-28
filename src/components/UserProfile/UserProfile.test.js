@@ -6,10 +6,9 @@ import UserProfile from './UserProfile.js';
 describe('UserProfile', () => {
   it('It should render the text that we expect', () => {
     const { getByText } = render(
-      <UserProfile name="Jordan" travelReason="leisure"/>
+      <UserProfile travelReason="leisure"/>
     );
 
-    expect(getByText("Jordan")).toBeInTheDocument();
     expect(getByText("leisure")).toBeInTheDocument();
   })
 })

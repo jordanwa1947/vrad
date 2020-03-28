@@ -38,7 +38,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header name={this.state.name} />
         <UserProfile name={this.state.name} travelReason={this.state.travelReason}/>
         <main>
           <Redirect to={this.state.pathString} />
