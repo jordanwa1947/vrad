@@ -13,13 +13,20 @@ class App extends React.Component {
     this.state = {
       name: '',
       travelReason: '',
-      fireRedirect: false
+      pathString: ''
     };
   }
 
   login = (name, travelReason) => {
-    this.setState({name: name, travelReason: travelReason})
-    this.setState({fireRedirect: true})
+    this.setState({
+      name: name,
+      travelReason: travelReason,
+      pathString: '/areas'
+    })
+  }
+
+  viewListings = (areaID) => {
+    this.setState({pathString: `/areas/${areaID}/listings`})
   }
 
   render() {
@@ -28,9 +35,9 @@ class App extends React.Component {
         <Header />
         <main>
           <Route exact path='/' render={() => <Login login={this.login}/>} />
-          {this.state.fireRedirect && <Redirect to='/areas'/>}
-          <Route exact path='/areas' component={Areas} />
-          <Route path='/areas/:area-id/listings' component={Listings} />
+          <Redirect to={this.state.pathString} />
+          <Route exact path='/areas' render={() => <Areas viewListings={this.viewListings}/>} />
+          <Route path='/areas/:area_ID/listings' component={Listings} />
         </main>
       </div>
     )
