@@ -4,6 +4,7 @@ import Login from '../Login/Login';
 import Areas from '../Areas/Areas';
 import Listings from '../Listings/Listings';
 import ListingDetails from '../ListingDetails/ListingDetails';
+import UserProfile from '../UserProfile/UserProfile';
 import './App.css';
 
 import { Route, NavLink, Redirect } from 'react-router-dom'
@@ -38,6 +39,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
+        <UserProfile name={this.state.name} travelReason={this.state.travelReason}/>
         <main>
           <Redirect to={this.state.pathString} />
           <Route
