@@ -37,7 +37,7 @@ class App extends React.Component {
           <Route exact path='/' render={() => <Login login={this.login}/>} />
           <Redirect to={this.state.pathString} />
           <Route exact path='/areas' render={() => <Areas viewListings={this.viewListings}/>} />
-          <Route path='/areas/:area_ID/listings' component={Listings} />
+          <Route path='/areas/:areaID/listings' component={Listings} />
         </main>
       </div>
     )
