@@ -14,8 +14,9 @@ class Listing extends React.Component{
     return(
       <article className="listing-card">
         <h2>{listing.name}</h2>
-        <p>{listing.listing_id}</p>
         <button>View Details</button>
+        <div className="overlay"></div>
+        <img src={`/images/${listing.listing_id}_a.jpg`}></img>
       </article>
     )
   }

@@ -1,4 +1,11 @@
 .listings-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+#listings-container-header {
+  text-align: center;
+  padding: 3em 0 1em 0;
+  flex-basis: 100%;
 }

@@ -6,7 +6,8 @@ class Listings extends React.Component {
   constructor() {
     super()
     this.state = {
-      listings: []
+      listings: [],
+      area: ''
     }
   }
 
@@ -20,9 +21,12 @@ class Listings extends React.Component {
     const { match: { params } } = this.props
     fetch(`http://localhost:3001/api/v1/areas/${params.areaID}`)
       .then(response => response.json())
-      .then(areaDetails => areaDetails.listings.map(listing => {
-        return this.fetchListing(listing)
-      }))
+      .then(areaDetails => {
+        this.setState({area: areaDetails.name})
+        return areaDetails.listings.map(listing => {
+          return this.fetchListing(listing)
+        })
+      })
       .then(listingPromises => Promise.all(listingPromises))
       .then(data => this.setState({listings: data}))
   }
@@ -36,6 +40,7 @@ class Listings extends React.Component {
   render() {
     return (
       <section className="listings-container">
+        <h2 id="listings-container-header">Listings in {this.state.area}{}</h2>
         {this.buildListingComponents()}
       </section>
     )
