@@ -1,4 +1,5 @@
 import React from 'react';
+import Listing from '../Listing/Listing';
 import './Listings.css';
 
 class Listings extends React.Component {
@@ -26,9 +27,17 @@ class Listings extends React.Component {
       .then(data => this.setState({listings: data}))
   }
 
+  buildListingComponents = () => {
+    return this.state.listings.map(listing => {
+      return <Listing key={listing.id} listing={listing} viewListings={this.props.viewListings} />
+    })
+  }
+
   render() {
-    return(
-      <p>Sup brah</p>
+    return (
+      <section className="listings-container">
+        {this.buildListingComponents()}
+      </section>
     )
   }
 

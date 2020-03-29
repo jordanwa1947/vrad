@@ -1,0 +1,10 @@
+.listing-card {
+  padding: 1.5em;
+  margin: 1em;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.listing-card h2 {
+  margin-bottom: 1em;
+}
