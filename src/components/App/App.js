@@ -15,7 +15,7 @@ class App extends React.Component {
     this.state = {
       name: '',
       travelReason: '',
-      pathString: ''
+      pathString: '/'
     };
   }
 
@@ -44,8 +44,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header name={this.state.name} logout={this.logout} />
-        <UserProfile name={this.state.name} travelReason={this.state.travelReason}/>
+        <Header
+          name={this.state.name}
+          logout={this.logout}
+          travelReason={this.state.travelReason}
+          path={this.state.pathString}
+        />
         <main>
           <Redirect to={this.state.pathString} />
           <Route

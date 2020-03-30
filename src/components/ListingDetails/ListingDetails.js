@@ -26,7 +26,6 @@ class ListingDetails extends React.Component{
 
   render() {
     const { listing } = this.state
-    console.log(listing.details);
     return(
       <section>
         <h2>Listing Detail for {listing.name}</h2>
