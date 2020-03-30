@@ -10,11 +10,11 @@ class Listing extends React.Component{
   }
 
   render() {
-    let { listing, viewListings} = this.props;
+    let { listing, viewListingDetails } = this.props;
     return(
       <article className="listing-card">
         <h2>{listing.name}</h2>
-        <button>View Details</button>
+        <button onClick={() => viewListingDetails(listing.listing_id)}>View Details</button>
         <div className="overlay"></div>
         <img src={`/images/${listing.listing_id}_a.jpg`}></img>
       </article>

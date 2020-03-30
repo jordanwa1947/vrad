@@ -33,14 +33,14 @@ class Listings extends React.Component {
 
   buildListingComponents = () => {
     return this.state.listings.map(listing => {
-      return <Listing key={listing.id} listing={listing} viewListings={this.props.viewListings} />
+      return <Listing key={listing.id} listing={listing} viewListingDetails={this.props.viewListingDetails} />
     })
   }
 
   render() {
     return (
       <section className="listings-container">
-        <h2 id="listings-container-header">Listings in {this.state.area}{}</h2>
+        <h2 id="listings-container-header">Listings in {this.state.area}</h2>
         {this.buildListingComponents()}
       </section>
     )
