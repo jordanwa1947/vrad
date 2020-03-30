@@ -8,6 +8,6 @@ describe('Header', () => {
     const { getByText } = render(<Header name="Jordan" />);
 
     expect(getByText("— vacation rentals around denver.")).toBeInTheDocument();
-    expect(getByText("Welcome, Jordan! vrad.")).toBeInTheDocument();
+    expect(getByText("Welcome Jordan! vrad.")).toBeInTheDocument();
   })
 })
