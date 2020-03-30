@@ -1,12 +1,15 @@
 import React from 'react';
 import Area from '../Area/Area';
 import './Areas.css';
+import { Redirect } from 'react-router-dom'
+
 
 class Areas extends React.Component {
   constructor() {
     super()
     this.state = {
-      areas: []
+      areas: [],
+      currentArea: null
     }
   }
 
@@ -39,7 +42,7 @@ class Areas extends React.Component {
 
   buildAreaComponents = () => {
     return this.state.areas.map(area => {
-      return <Area key={area.id} area={area} />
+      return <Area key={area.id} area={area} viewListings={this.props.viewListings} />
     })
   }
 

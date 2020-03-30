@@ -1,0 +1,8 @@
+.listing-images {
+  display: flex;
+}
+
+.listing-images img {
+  width: 26em;
+  margin: 1em;
+}
