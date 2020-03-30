@@ -4,6 +4,7 @@ import Login from '../Login/Login';
 import Areas from '../Areas/Areas';
 import Listings from '../Listings/Listings';
 import ListingDetails from '../ListingDetails/ListingDetails';
+import UserProfile from '../UserProfile/UserProfile';
 import './App.css';
 
 import { Route, NavLink, Redirect } from 'react-router-dom'
@@ -14,7 +15,7 @@ class App extends React.Component {
     this.state = {
       name: '',
       travelReason: '',
-      pathString: ''
+      pathString: '/'
     };
   }
 
@@ -23,6 +24,12 @@ class App extends React.Component {
       name: name,
       travelReason: travelReason,
       pathString: '/areas'
+    })
+  }
+
+  logout = () => {
+    this.setState({
+      pathString: '/'
     })
   }
 
@@ -37,7 +44,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header
+          name={this.state.name}
+          logout={this.logout}
+          travelReason={this.state.travelReason}
+          path={this.state.pathString}
+        />
         <main>
           <Redirect to={this.state.pathString} />
           <Route
