@@ -27,6 +27,12 @@ class App extends React.Component {
     })
   }
 
+  logout = () => {
+    this.setState({
+      pathString: '/'
+    })
+  }
+
   viewListings = (areaID) => {
     this.setState({pathString: `/areas/${areaID}/listings`})
   }
@@ -38,7 +44,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header name={this.state.name} />
+        <Header name={this.state.name} logout={this.logout} />
         <UserProfile name={this.state.name} travelReason={this.state.travelReason}/>
         <main>
           <Redirect to={this.state.pathString} />

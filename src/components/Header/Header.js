@@ -6,7 +6,7 @@ const Header = (props) => {
     <header>
       <h1>Welcome, {props.name}! vrad. <span id="headline">— vacation rentals around denver.</span></h1>
       <nav>
-        <button>Log Out</button>
+        <button onClick={props.logout} >Log Out</button>
       </nav>
     </header>
   )
