@@ -27,8 +27,8 @@ class Favorites extends React.Component {
   render() {
     return (
       <section className="listings-container">
-        <h2 id="listings-container-header">Favorites in {this.state.area}</h2>
-        {this.buildListingComponents()}
+        <h2 id="listings-container-header">Favorites</h2>
+        {!this.props.favoriteListings.length ? <h3>No Favorites</h3> : this.buildListingComponents()}
       </section>
     )
   }
