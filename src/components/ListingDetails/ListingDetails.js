@@ -5,6 +5,7 @@ class ListingDetails extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
+      addToFavorites: this.props.addToFavorites,
       listing: {
         address: {
           street: '',
@@ -36,14 +37,16 @@ class ListingDetails extends React.Component{
             <img src={`/images/${listing.listing_id}_c.jpg`}></img>
           </section>
           <h4>Features:</h4>
-          {listing.details.features.map(feature => {
+          {listing.details.features.map((feature) => {
             return (<p>{feature}</p>)
           })}
           <p>Beds: {listing.details.beds}</p>
           <p>Baths: {listing.details.baths}</p>
           <p>Address: {listing.address.street}, {listing.address.zip}</p>
           <p>Cost Per Night:  ${listing.details.cost_per_night}</p>
-          <button>Favorite</button>
+          <button onClick={() => this.state.addToFavorites(this.state.listing)}>
+            Favorite
+          </button>
           <button>Back</button>
         </div>
       </section>

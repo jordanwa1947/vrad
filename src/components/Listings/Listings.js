@@ -7,6 +7,7 @@ class Listings extends React.Component {
     super()
     this.state = {
       listings: [],
+      favorites: [],
       area: ''
     }
   }
@@ -33,7 +34,13 @@ class Listings extends React.Component {
 
   buildListingComponents = () => {
     return this.state.listings.map(listing => {
-      return <Listing key={listing.id} listing={listing} viewListingDetails={this.props.viewListingDetails} />
+      return (
+        <Listing
+          key={listing.id}
+          listing={listing}
+          viewListingDetails={this.props.viewListingDetails}
+        />
+      )
     })
   }
 

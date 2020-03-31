@@ -15,7 +15,8 @@ class App extends React.Component {
     this.state = {
       name: '',
       travelReason: '',
-      pathString: '/'
+      pathString: '/',
+      favorites: []
     };
   }
 
@@ -39,6 +40,12 @@ class App extends React.Component {
 
   viewListingDetails = (listingID) => {
     this.setState({pathString: `/api/v1/listings/${listingID}`})
+  }
+
+  addToFavorites = (favorite) => {
+    this.setState({
+      favorites: this.state.favorites.concat([favorite])
+    })
   }
 
   render() {
@@ -72,7 +79,9 @@ class App extends React.Component {
             path='/api/v1/listings/:listingID'
             render={({match}) => <ListingDetails
               viewListings={this.viewListings}
-              match={match}/>
+              match={match}
+              addToFavorites={this.addToFavorites}
+            />
           }
           />
         </main>
