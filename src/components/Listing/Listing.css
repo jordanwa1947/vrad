@@ -29,6 +29,10 @@
   right: 1em;
 }
 
+.favorite-button {
+  left: 1em;
+}
+
 .overlay {
   background-color: black;
   opacity: .5;
