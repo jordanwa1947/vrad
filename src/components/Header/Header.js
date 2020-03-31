@@ -14,7 +14,7 @@ const Header = (props) => {
           </h1>
           <nav>
             <button onClick={props.logout}>Log Out</button>
-            <button onClick={props.goToFavorites}>Go To Favorites</button>
+            <button onClick={props.goToFavorites}>{props.favoriteCount} Favorites</button>
           </nav>
           <UserProfile name={props.name} travelReason={props.travelReason}/>
         </>

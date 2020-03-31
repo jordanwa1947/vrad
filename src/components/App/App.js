@@ -71,6 +71,7 @@ class App extends React.Component {
           logout={this.logout}
           travelReason={this.state.travelReason}
           path={this.state.pathString}
+          favoriteCount={this.state.favorites.length}
         />
         <main>
           <Redirect to={this.state.pathString} />
