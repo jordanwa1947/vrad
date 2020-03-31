@@ -44,9 +44,18 @@ class App extends React.Component {
   }
 
   addToFavorites = (favorite) => {
-    this.setState({
-      favorites: this.state.favorites.concat([favorite])
+    const existingFavorite = this.state.favorites.find(listing => {
+      return listing.listing_id === favorite.listing_id
     })
+    if(!existingFavorite) {
+      this.setState({
+        favorites: this.state.favorites.concat([favorite])
+      })
+    } else {
+      this.setState({
+        favorites: this.state.favorites.filter(listing => listing.listing_id !== favorite.listing_id)
+      })
+    }
   }
 
   goToFavorites = () => {
