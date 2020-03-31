@@ -11,13 +11,14 @@ class Favorites extends React.Component {
   }
 
   buildListingComponents = () => {
-    return this.state.favoriteListings.map(listing => {
+    return this.props.favoriteListings.map(listing => {
       return (
         <Listing
           key={listing.listing_id}
           listing_id={listing.listing_id}
           name={listing.name}
           viewListingDetails={this.props.viewListingDetails}
+          addToFavorites={this.props.addToFavorites}
         />
       )
     })

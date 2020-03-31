@@ -3,8 +3,8 @@ import Listing from '../Listing/Listing';
 import './Listings.css';
 
 class Listings extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       listings: [],
       favorites: [],
@@ -40,6 +40,7 @@ class Listings extends React.Component {
           listing_id={listing.listing_id}
           name={listing.name}
           viewListingDetails={this.props.viewListingDetails}
+          addToFavorites={this.props.addToFavorites}
         />
       )
     })

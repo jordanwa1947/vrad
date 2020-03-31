@@ -89,7 +89,10 @@ class App extends React.Component {
             render={({match}) =>
               <Listings
                 viewListingDetails={this.viewListingDetails}
-                match={match}/>}
+                match={match}
+                addToFavorites={this.addToFavorites}
+              />
+            }
           />
           <Route
             exact path='/listings/:listingID'
@@ -106,6 +109,7 @@ class App extends React.Component {
               favoriteListings={this.state.favorites}
               viewListingDetails={this.viewListingDetails}
               match={match}
+              addToFavorites={this.addToFavorites}
             />
           }
           />
