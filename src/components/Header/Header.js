@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import UserProfile from '../UserProfile/UserProfile'
+import { NavLink } from 'react-router-dom'
 
 const Header = (props) => {
 
@@ -12,7 +13,8 @@ const Header = (props) => {
            Welcome {props.name}! vrad. <span id="headline">— vacation rentals around denver.</span>
           </h1>
           <nav>
-            <button onClick={props.logout} >Log Out</button>
+            <button onClick={props.logout}>Log Out</button>
+            <button onClick={props.goToFavorites}>Go To Favorites</button>
           </nav>
           <UserProfile name={props.name} travelReason={props.travelReason}/>
         </>

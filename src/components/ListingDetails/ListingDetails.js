@@ -7,6 +7,8 @@ class ListingDetails extends React.Component{
     this.state = {
       addToFavorites: this.props.addToFavorites,
       listing: {
+        name: '',
+        listing_id: '',
         address: {
           street: '',
           zip: ''

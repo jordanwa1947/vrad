@@ -5,6 +5,7 @@ import Areas from '../Areas/Areas';
 import Listings from '../Listings/Listings';
 import ListingDetails from '../ListingDetails/ListingDetails';
 import UserProfile from '../UserProfile/UserProfile';
+import Favorites from '../Favorites/Favorites';
 import './App.css';
 
 import { Route, NavLink, Redirect } from 'react-router-dom'
@@ -39,7 +40,7 @@ class App extends React.Component {
   }
 
   viewListingDetails = (listingID) => {
-    this.setState({pathString: `/api/v1/listings/${listingID}`})
+    this.setState({pathString: `/listings/${listingID}`})
   }
 
   addToFavorites = (favorite) => {
@@ -48,10 +49,15 @@ class App extends React.Component {
     })
   }
 
+  goToFavorites = () => {
+    this.setState({pathString: '/favorites'})
+  }
+
   render() {
     return (
       <div className="App">
         <Header
+          goToFavorites={this.goToFavorites}
           name={this.state.name}
           logout={this.logout}
           travelReason={this.state.travelReason}
@@ -69,18 +75,27 @@ class App extends React.Component {
               <Areas viewListings={this.viewListings}/>}
           />
           <Route
-            path='/areas/:areaID/listings'
+            exact path='/areas/:areaID/listings'
             render={({match}) =>
               <Listings
                 viewListingDetails={this.viewListingDetails}
                 match={match}/>}
           />
           <Route
-            path='/api/v1/listings/:listingID'
+            exact path='/listings/:listingID'
             render={({match}) => <ListingDetails
               viewListings={this.viewListings}
               match={match}
               addToFavorites={this.addToFavorites}
+            />
+          }
+          />
+          <Route
+            exact path='/favorites'
+            render={({match}) => <Favorites
+              favoriteListings={this.state.favorites}
+              viewListingDetails={this.viewListingDetails}
+              match={match}
             />
           }
           />

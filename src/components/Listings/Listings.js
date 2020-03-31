@@ -36,8 +36,9 @@ class Listings extends React.Component {
     return this.state.listings.map(listing => {
       return (
         <Listing
-          key={listing.id}
-          listing={listing}
+          key={listing.listing_id}
+          listing_id={listing.listing_id}
+          name={listing.name}
           viewListingDetails={this.props.viewListingDetails}
         />
       )
