@@ -1,7 +1,7 @@
 # VRAD, Vacation Rentals Around Denver
 
 ### Abstract
-*This app is an airBnB copycat, which uses React Router to navigate between pages.
+*This app is an airBnB copycat, which uses React Router to navigate between pages.*
 
 ## Screenshots
 #### Login Page
